@@ -51,4 +51,4 @@ for i in range(5):
 
 # Translate all boxes to have xy center at (0, 0)
 boxes_center = compute_bbox_center(all_boxes)
-translate("/scene/boxes", (-boxes_center[0], -boxes_center[1], 0))
+translate(all_boxes, (-boxes_center[0], -boxes_center[1], 0))
