@@ -99,7 +99,7 @@ def add_random_box_stack(
 
     boxes = []
     for i in range(count):
-        box_i = add_box_of_size(stage, os.path.join(path, f"box_{i}"), sizes[i])
+        box_i = add_box_of_size(stage, os.path.join(path + "/" + f"box_{i}"), sizes[i])
         boxes.append(box_i)
 
     if count > 0:
@@ -136,7 +136,7 @@ def add_random_box_stacks(
     stacks = []
     count = random.randint(*count_range)
     for i in range(count):
-        stack, items = add_random_box_stack(stage, os.path.join(path, f"stack_{i}"))
+        stack, items = add_random_box_stack(stage, os.path.join(path + "/" + f"stack_{i}"))
         stacks.append(stack)
 
     for i in range(count):

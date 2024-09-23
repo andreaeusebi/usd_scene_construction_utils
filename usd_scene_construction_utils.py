@@ -90,7 +90,7 @@ def add_usd_ref(stage: Usd.Stage, path: str, usd_path: str) -> Usd.Prim:
     """
 
     stage.DefinePrim(path, "Xform")
-    prim_ref = stage.DefinePrim(os.path.join(path, "ref"))
+    prim_ref = stage.DefinePrim(os.path.join(path + "/ref"))  # Use + to avoid backslash in Windows
     prim_ref.GetReferences().AddReference(usd_path)
 
     return get_prim(stage, path)
@@ -171,7 +171,7 @@ def add_box(stage: Usd.Stage, path: str, size: Tuple[float, float, float]) -> Us
         faceUvMaps) = _make_box_mesh(half_size)
 
     # create mesh at {path}/mesh, but return prim at {path}
-    prim: UsdGeom.Mesh = UsdGeom.Mesh.Define(stage, os.path.join(path, "mesh"))
+    prim: UsdGeom.Mesh = UsdGeom.Mesh.Define(stage, os.path.join(path + "/mesh"))
     prim.CreateExtentAttr().Set([
         (-half_size[0], -half_size[1], -half_size[2]),
         (half_size[0], half_size[1], half_size[2])
@@ -238,7 +238,7 @@ def add_plane(
     stage.DefinePrim(path, "Xform")
     
     # create mesh at {path}/mesh, but return prim at {path}
-    prim: UsdGeom.Mesh = UsdGeom.Mesh.Define(stage, os.path.join(path, "mesh"))
+    prim: UsdGeom.Mesh = UsdGeom.Mesh.Define(stage, os.path.join(path + "/mesh"))
     prim.CreateExtentAttr().Set([
         (-size[0], -size[1], 0),
         (size[0], size[1], 0)
