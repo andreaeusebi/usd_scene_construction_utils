@@ -47,8 +47,8 @@ def add_cardboard_box(stage, path: str):
 
 def add_pallet_with_box(stage, path: str):
     container = add_xform(stage, path)
-    pallet = add_pallet(stage, os.path.join(path, "pallet"))
-    box = add_cardboard_box(stage, os.path.join(path, "box"))
+    pallet = add_pallet(stage, os.path.join(path + "/pallet"))
+    box = add_cardboard_box(stage, os.path.join(path + "/box"))
     pallet_bbox = compute_bbox(pallet)
     box_bbox = compute_bbox(box)
     translate(box,(0, 0, pallet_bbox[1][2] - box_bbox[0][2]))
