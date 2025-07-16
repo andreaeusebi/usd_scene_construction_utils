@@ -13,10 +13,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+print("##### ----- BEGIN ----- #####")
+
 import sys
 import os
 from pathlib import Path
-sys.path.append(f"{Path.home()}/usd_scene_construction_utils") # use your install path
+sys.path.append(f"{Path.home()}/Documents/omniverse/usd_scene_construction_utils") # use your install path
 from usd_scene_construction_utils import (
     add_usd_ref,
     rotate_x,

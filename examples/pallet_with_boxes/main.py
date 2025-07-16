@@ -17,8 +17,10 @@ import sys
 import os
 import random
 from pathlib import Path
-sys.path.append(f"{Path.home()}/usd_scene_construction_utils") # use your install path
-sys.path.append(f"{Path.home()}/usd_scene_construction_utils/examples/pallet_with_boxes") # use your install path
+# sys.path.append(f"{Path.home()}/usd_scene_construction_utils") # use your install path
+sys.path.append(f"{Path.home()}/Documents/omniverse/usd_scene_construction_utils") # use your install path
+# sys.path.append(f"{Path.home()}/usd_scene_construction_utils/examples/pallet_with_boxes") # use your install path
+sys.path.append(f"{Path.home()}/Documents/omniverse/usd_scene_construction_utils/examples/pallet_with_boxes") # use your install path
 
 from usd_scene_construction_utils import *
 
